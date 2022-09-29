@@ -4,6 +4,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InterfazCalamar extends JFrame {
 
@@ -33,8 +37,32 @@ public class InterfazCalamar extends JFrame {
 		setBounds(100, 100, 450, 301);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblVidas = new JLabel("");
+		lblVidas.setBounds(36, 20, 45, 13);
+		contentPane.add(lblVidas);
+		
+		JButton btnPrueba1 = new JButton("Prueba 1");
+		btnPrueba1.setBounds(10, 64, 85, 21);
+		btnPrueba1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		contentPane.add(btnPrueba1);
+		
+		JButton btnPrueba2 = new JButton("Prueba 2");
+		btnPrueba2.setBounds(10, 110, 85, 21);
+		contentPane.add(btnPrueba2);
+		
+		JButton btnPrueba3 = new JButton("Prueba 3");
+		btnPrueba3.setBounds(10, 158, 85, 21);
+		btnPrueba3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		contentPane.add(btnPrueba3);
+		
 	}
-
 }
