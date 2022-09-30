@@ -23,7 +23,7 @@ public class Prueba1 extends JFrame {
 	public int canicaIAaleatoria = (int)(1+ Math.random()*canicaIA);
 	private JPanel panel;
 	
-	//int suma = 0;
+	//int suma = 00;
 	/**
 	 * Launch the application.
 	 */
