@@ -20,7 +20,7 @@ public class Prueba1 extends JFrame {
 	private JLabel lblNumCanicaIA;
 	public int canicaIA = 12;
 	public int  canicaJUG = 12;
-
+	public Prueba2 prueba = new Prueba2 ();
 	private JPanel panel;
 	
 	/**
@@ -51,17 +51,6 @@ public class Prueba1 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setVisible(true);
 		contentPane.setLayout(null);
-		
-		JButton pasarPrueba = new JButton("Continuamos a la prueba 2");
-		pasarPrueba.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Prueba2 prueba = new Prueba2 ();
-				prueba.setVisible(true);
-			}
-		});
-		pasarPrueba.setBounds(530, 406, 232, 21);
-		contentPane.add(pasarPrueba);
-		pasarPrueba.setVisible(false);
 		
 		JLabel imagen = new JLabel("");
 		imagen.setBounds(459, 0, 324, 463);
@@ -184,7 +173,7 @@ public class Prueba1 extends JFrame {
 					
 				}else if(canicaIA<=0){
 					imagen2.setVisible(true);
-					pasarPrueba.setVisible(true);
+					prueba.setVisible(true);
 				}
 			}
 		});
@@ -221,7 +210,7 @@ public class Prueba1 extends JFrame {
 					imagen.setVisible(true);
 				}else if(canicaIA<=0){
 					imagen2.setVisible(true);
-					pasarPrueba.setVisible(true);
+					prueba.setVisible(true);
 				}
 			}
 		});
@@ -276,7 +265,7 @@ public class Prueba1 extends JFrame {
 					imagen.setVisible(true);
 				}else if(canicaIA<=0) {
 					imagen2.setVisible(true);
-					pasarPrueba.setVisible(true);
+					prueba.setVisible(true);
 				}
 			}
 		});
