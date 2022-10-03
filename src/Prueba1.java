@@ -20,10 +20,9 @@ public class Prueba1 extends JFrame {
 	private JLabel lblNumCanicaIA;
 	public int canicaIA = 12;
 	public int  canicaJUG = 12;
-	public int canicaIAaleatoria = (int)(1+ Math.random()*canicaIA);
+
 	private JPanel panel;
 	
-	//int suma = 00;
 	/**
 	 * Launch the application.
 	 */
@@ -46,13 +45,35 @@ public class Prueba1 extends JFrame {
 	public Prueba1() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 797, 510);
+		setBounds(100, 100, 807, 519);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		contentPane.setVisible(true);
+		contentPane.setLayout(null);
 		
+		JButton pasarPrueba = new JButton("Continuamos a la prueba 2");
+		pasarPrueba.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Prueba2 prueba = new Prueba2 ();
+				prueba.setVisible(true);
+			}
+		});
+		pasarPrueba.setBounds(530, 406, 232, 21);
+		contentPane.add(pasarPrueba);
+		pasarPrueba.setVisible(false);
+		
+		JLabel imagen = new JLabel("");
+		imagen.setBounds(459, 0, 324, 463);
+		imagen.setIcon(new ImageIcon("src/imagenes/game.jpg"));
+		contentPane.add(imagen);
+		imagen.setVisible(false);
+		
+		JLabel imagen2 = new JLabel("");
+		imagen2.setBounds(405, 0, 378, 473);
+		imagen2.setIcon(new ImageIcon("src/imagenes/win.jpg"));
+		contentPane.add(imagen2);
+		imagen2.setVisible(false);
 		
 		textNumCanicaJug = new JTextField();
 		textNumCanicaJug.setBounds(293, 63, 96, 19);
@@ -84,8 +105,8 @@ public class Prueba1 extends JFrame {
 		contentPane.add(lblElegirJUG);
 		
 		textApuestaJUG = new JTextField();
-		textApuestaJUG.setColumns(10);
 		textApuestaJUG.setBounds(293, 236, 96, 19);
+		textApuestaJUG.setColumns(10);
 		contentPane.add(textApuestaJUG);
 		
 		JLabel lblApuestaIA = new JLabel("La IA ha apostado ");
@@ -105,13 +126,13 @@ public class Prueba1 extends JFrame {
 		contentPane.add(lblGanador2);
 		
 		lblContadorCanicaJUG = new JLabel("");
-		lblContadorCanicaJUG.setText(String.valueOf(canicaJUG));
 		lblContadorCanicaJUG.setBounds(93, 13, 45, 13);
+		lblContadorCanicaJUG.setText(String.valueOf(canicaJUG));
 		contentPane.add(lblContadorCanicaJUG);
 		
 		JLabel lblContadorCanicaIA = new JLabel("");
-		lblContadorCanicaIA.setText(String.valueOf(canicaIA));
 		lblContadorCanicaIA.setBounds(243, 13, 45, 13);
+		lblContadorCanicaIA.setText(String.valueOf(canicaIA));
 		contentPane.add(lblContadorCanicaIA);
 		
 		JLabel lblNumCanicaIA = new JLabel("");
@@ -135,17 +156,19 @@ public class Prueba1 extends JFrame {
 		contentPane.add(lblPARIMPAR);
 		
 		JButton btnParJUG = new JButton("Par");
+		btnParJUG.setBounds(43, 119, 85, 21);
 		btnParJUG.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				int canicaIAaleatoria = (int)(1+ Math.random()*canicaIA);
 				lblNumCanicaIA.setText(String.valueOf(canicaIAaleatoria));
-			
+				
 				if(canicaIAaleatoria%2==0) {
 					lblGanador1_1.setText(" Jugador, con " + textNumCanicaJug.getText() + " canicas");
 					canicaJUG = canicaJUG + Integer.parseInt(textNumCanicaJug.getText());
 					canicaIA =  canicaIA - Integer.parseInt(textNumCanicaJug.getText());
 					lblContadorCanicaJUG.setText(String.valueOf(canicaJUG));
 					lblContadorCanicaIA.setText(String.valueOf(canicaIA));
-					
 				
 					
 				}else {
@@ -156,15 +179,23 @@ public class Prueba1 extends JFrame {
 					lblContadorCanicaIA.setText(String.valueOf(canicaIA));
 				
 				}
+				if(canicaJUG<=0) {
+					imagen.setVisible(true);
+					
+				}else if(canicaIA<=0){
+					imagen2.setVisible(true);
+					pasarPrueba.setVisible(true);
+				}
 			}
 		});
-		btnParJUG.setBounds(43, 119, 85, 21);
 		contentPane.add(btnParJUG);
 		
 		
 		JButton btnImparJUG = new JButton("Impar");
+		btnImparJUG.setBounds(188, 119, 85, 21);
 		btnImparJUG.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				int canicaIAaleatoria = (int)(1+ Math.random()*canicaIA);
 				lblNumCanicaIA.setText(String.valueOf(canicaIAaleatoria));
 				
 				if(canicaIAaleatoria%2!=0) {
@@ -186,50 +217,69 @@ public class Prueba1 extends JFrame {
 					
 					
 				}
-				
+				if(canicaJUG<=0) {
+					imagen.setVisible(true);
+				}else if(canicaIA<=0){
+					imagen2.setVisible(true);
+					pasarPrueba.setVisible(true);
+				}
 			}
 		});
-		btnImparJUG.setBounds(188, 119, 85, 21);
 		contentPane.add(btnImparJUG);
 		
 		JButton botonJuegoIA = new JButton("Resultado");
+		botonJuegoIA.setBounds(157, 405, 168, 23);
 		botonJuegoIA.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				System.out.println(canicaIAaleatoria);
+				int canicaIAaleatoria = (int)(1+ Math.random()*canicaIA);
 				
 				int parImpar = (int)(1+ Math.random()*2);
 				
 				if(parImpar == 1) {
-					System.out.println("Es par");
+					lblApuestaJugIA.setText(String.valueOf(canicaIAaleatoria));
+					lblPARIMPAR.setText(" par");
 					if(Integer.parseInt(textApuestaJUG.getText())%2==0) {
-						lblGanador2_2.setText(" IA, con " + textApuestaJUG.getText() + " canicas");
-						canicaJUG = canicaJUG - Integer.parseInt(textApuestaJUG.getText());
-						canicaIA =  canicaIA + Integer.parseInt(textApuestaJUG.getText());
-						lblContadorCanicaJUG.setText(String.valueOf(canicaJUG));
-						lblContadorCanicaIA.setText(String.valueOf(canicaIA));
 						
-					
+						lblGanador2_2.setText(" IA, con " + lblApuestaJugIA.getText() + " canicas");
 						
+						canicaJUG = canicaJUG - Integer.parseInt(lblApuestaJugIA.getText());
+						canicaIA =  canicaIA + Integer.parseInt(lblApuestaJugIA.getText());
+						
+					}else {
+						lblGanador2_2.setText(" JUGADOR, con " + lblApuestaJugIA.getText() + " canicas");
+						
+						canicaJUG = canicaJUG + Integer.parseInt(lblApuestaJugIA.getText());
+						canicaIA =  canicaIA - Integer.parseInt(lblApuestaJugIA.getText());
 					}
-				}else {
-					System.out.println("Es impar");
-					lblGanador2_2.setText(" Jugador, con " + textApuestaJUG.getText() + " canicas");
-					canicaJUG = canicaJUG + Integer.parseInt(textApuestaJUG.getText());
-					canicaIA =  canicaIA - Integer.parseInt(textApuestaJUG.getText());
 					lblContadorCanicaJUG.setText(String.valueOf(canicaJUG));
 					lblContadorCanicaIA.setText(String.valueOf(canicaIA));
+				}else {
+					lblApuestaJugIA.setText(String.valueOf(canicaIAaleatoria));
+					lblPARIMPAR.setText(" impar");
 					
+					if(Integer.parseInt(textApuestaJUG.getText())%2!=0) {
+					lblGanador2_2.setText(" IA, con " + lblApuestaJugIA.getText() + " canicas");
 					
+					canicaJUG = canicaJUG - Integer.parseInt(lblApuestaJugIA.getText());
+					canicaIA =  canicaIA + Integer.parseInt(lblApuestaJugIA.getText());
 					
+					}else {
+						lblGanador2_2.setText(" JUGADOR, con " + lblApuestaJugIA.getText() + " canicas");
+						
+						canicaJUG = canicaJUG + Integer.parseInt(lblApuestaJugIA.getText());
+						canicaIA =  canicaIA - Integer.parseInt(lblApuestaJugIA.getText());
+					}
+					lblContadorCanicaJUG.setText(String.valueOf(canicaJUG));
+					lblContadorCanicaIA.setText(String.valueOf(canicaIA));
 				}
-				
+				if(canicaJUG<=0) {
+					imagen.setVisible(true);
+				}else if(canicaIA<=0) {
+					imagen2.setVisible(true);
+					pasarPrueba.setVisible(true);
+				}
 			}
 		});
-		botonJuegoIA.setBounds(157, 405, 168, 23);
 		contentPane.add(botonJuegoIA);
-		
-		
-		
 	}
 }

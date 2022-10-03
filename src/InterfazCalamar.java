@@ -48,6 +48,10 @@ public class InterfazCalamar extends JFrame {
 		btnPrueba1.setBounds(10, 64, 85, 21);
 		btnPrueba1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Prueba1 prueba = new Prueba1 ();
+				prueba.setVisible(true);
+				
+				
 			}
 		});
 		contentPane.add(btnPrueba1);
@@ -55,14 +59,13 @@ public class InterfazCalamar extends JFrame {
 		JButton btnPrueba2 = new JButton("Prueba 2");
 		btnPrueba2.setBounds(10, 110, 85, 21);
 		contentPane.add(btnPrueba2);
+		btnPrueba2.setVisible(false);
 		
 		JButton btnPrueba3 = new JButton("Prueba 3");
 		btnPrueba3.setBounds(10, 158, 85, 21);
-		btnPrueba3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		contentPane.add(btnPrueba3);
+		btnPrueba3.setVisible(false);
+		
 		
 	}
 }
