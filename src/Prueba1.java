@@ -170,6 +170,7 @@ public class Prueba1 extends JFrame {
 				}
 				if(canicaJUG<=0) {
 					imagen.setVisible(true);
+					prueba.setVisible(true);
 					
 				}else if(canicaIA<=0){
 					imagen2.setVisible(true);
@@ -208,6 +209,7 @@ public class Prueba1 extends JFrame {
 				}
 				if(canicaJUG<=0) {
 					imagen.setVisible(true);
+					prueba.setVisible(true);
 				}else if(canicaIA<=0){
 					imagen2.setVisible(true);
 					prueba.setVisible(true);

@@ -118,6 +118,7 @@ public class Prueba2 extends JFrame {
 		btnPlantarse.setBounds(650, 318, 113, 21);
 		contentPane.add(btnPlantarse);
 		
+		
 		JButton btnPedir = new JButton("PEDIR CARTA");
 		btnPedir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
