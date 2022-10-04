@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Prueba1 extends JFrame {
 
@@ -45,7 +46,7 @@ public class Prueba1 extends JFrame {
 	public Prueba1() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 807, 519);
+		setBounds(100, 100, 648, 485);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -53,13 +54,13 @@ public class Prueba1 extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel imagen = new JLabel("");
-		imagen.setBounds(459, 0, 324, 463);
+		imagen.setBounds(405, 103, 219, 243);
 		imagen.setIcon(new ImageIcon("src/imagenes/game.jpg"));
 		contentPane.add(imagen);
 		imagen.setVisible(false);
 		
 		JLabel imagen2 = new JLabel("");
-		imagen2.setBounds(405, 0, 378, 473);
+		imagen2.setBounds(405, 0, 270, 327);
 		imagen2.setIcon(new ImageIcon("src/imagenes/win.jpg"));
 		contentPane.add(imagen2);
 		imagen2.setVisible(false);
@@ -70,26 +71,32 @@ public class Prueba1 extends JFrame {
 		textNumCanicaJug.setColumns(10);
 		
 		JLabel lblNumJUGCanica = new JLabel("Elige el numero de canicas que vas a jugar:");
+		lblNumJUGCanica.setForeground(Color.WHITE);
 		lblNumJUGCanica.setBounds(39, 66, 270, 13);
 		contentPane.add(lblNumJUGCanica);
 		
 		JLabel lblNumIACanica = new JLabel("La IA ha sacado estas canicas:");
+		lblNumIACanica.setForeground(Color.WHITE);
 		lblNumIACanica.setBounds(43, 172, 192, 13);
 		contentPane.add(lblNumIACanica);
 		
 		JLabel lblContJUG = new JLabel("JUGADOR:");
+		lblContJUG.setForeground(Color.WHITE);
 		lblContJUG.setBounds(10, 13, 73, 13);
 		contentPane.add(lblContJUG);
 		
 		JLabel lblContIA = new JLabel("IA:");
+		lblContIA.setForeground(Color.WHITE);
 		lblContIA.setBounds(188, 13, 19, 13);
 		contentPane.add(lblContIA);
 		
 		JLabel lblEligirIA = new JLabel("Elige el numero de canicas que vas a jugar:");
+		lblEligirIA.setForeground(Color.WHITE);
 		lblEligirIA.setBounds(39, 239, 249, 13);
 		contentPane.add(lblEligirIA);
 		
 		JLabel lblElegirJUG = new JLabel("Elige si la IA tiene un numero de canicas par o impar:");
+		lblElegirJUG.setForeground(Color.WHITE);
 		lblElegirJUG.setBounds(39, 96, 395, 13);
 		contentPane.add(lblElegirJUG);
 		
@@ -99,48 +106,59 @@ public class Prueba1 extends JFrame {
 		contentPane.add(textApuestaJUG);
 		
 		JLabel lblApuestaIA = new JLabel("La IA ha apostado ");
+		lblApuestaIA.setForeground(Color.WHITE);
 		lblApuestaIA.setBounds(39, 274, 121, 13);
 		contentPane.add(lblApuestaIA);
 		
 		JLabel lblCanicas = new JLabel("canicas a:");
+		lblCanicas.setForeground(Color.WHITE);
 		lblCanicas.setBounds(264, 274, 75, 13);
 		contentPane.add(lblCanicas);
 		
 		JLabel lblGanador1 = new JLabel("El ganador es:");
+		lblGanador1.setForeground(Color.WHITE);
 		lblGanador1.setBounds(39, 207, 89, 13);
 		contentPane.add(lblGanador1);
 		
 		JLabel lblGanador2 = new JLabel("El ganador es:");
+		lblGanador2.setForeground(Color.WHITE);
 		lblGanador2.setBounds(39, 333, 89, 13);
 		contentPane.add(lblGanador2);
 		
 		lblContadorCanicaJUG = new JLabel("");
+		lblContadorCanicaJUG.setForeground(Color.WHITE);
 		lblContadorCanicaJUG.setBounds(93, 13, 45, 13);
 		lblContadorCanicaJUG.setText(String.valueOf(canicaJUG));
 		contentPane.add(lblContadorCanicaJUG);
 		
 		JLabel lblContadorCanicaIA = new JLabel("");
+		lblContadorCanicaIA.setForeground(Color.WHITE);
 		lblContadorCanicaIA.setBounds(243, 13, 45, 13);
 		lblContadorCanicaIA.setText(String.valueOf(canicaIA));
 		contentPane.add(lblContadorCanicaIA);
 		
 		JLabel lblNumCanicaIA = new JLabel("");
+		lblNumCanicaIA.setForeground(Color.WHITE);
 		lblNumCanicaIA.setBounds(278, 172, 45, 13);
 		contentPane.add(lblNumCanicaIA);
 		
 		JLabel lblGanador1_1 = new JLabel("");
+		lblGanador1_1.setForeground(Color.WHITE);
 		lblGanador1_1.setBounds(157, 207, 378, 13);
 		contentPane.add(lblGanador1_1);
 		
 		JLabel lblGanador2_2 = new JLabel("");
+		lblGanador2_2.setForeground(Color.WHITE);
 		lblGanador2_2.setBounds(162, 333, 287, 13);
 		contentPane.add(lblGanador2_2);
 		
 		JLabel lblApuestaJugIA = new JLabel("");
+		lblApuestaJugIA.setForeground(Color.WHITE);
 		lblApuestaJugIA.setBounds(149, 274, 45, 13);
 		contentPane.add(lblApuestaJugIA);
 		
 		JLabel lblPARIMPAR = new JLabel("");
+		lblPARIMPAR.setForeground(Color.WHITE);
 		lblPARIMPAR.setBounds(363, 274, 45, 13);
 		contentPane.add(lblPARIMPAR);
 		
@@ -170,7 +188,6 @@ public class Prueba1 extends JFrame {
 				}
 				if(canicaJUG<=0) {
 					imagen.setVisible(true);
-					prueba.setVisible(true);
 					
 				}else if(canicaIA<=0){
 					imagen2.setVisible(true);
@@ -209,7 +226,6 @@ public class Prueba1 extends JFrame {
 				}
 				if(canicaJUG<=0) {
 					imagen.setVisible(true);
-					prueba.setVisible(true);
 				}else if(canicaIA<=0){
 					imagen2.setVisible(true);
 					prueba.setVisible(true);
@@ -272,5 +288,10 @@ public class Prueba1 extends JFrame {
 			}
 		});
 		contentPane.add(botonJuegoIA);
+		
+		JLabel imagen3 = new JLabel("");
+		imagen3.setBounds(0, 0, 648, 485);
+		imagen3.setIcon(new ImageIcon("src/imagenes/canica.jpg"));
+		contentPane.add(imagen3);
 	}
 }

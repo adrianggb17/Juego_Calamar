@@ -11,6 +11,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class Prueba3 extends JFrame {
 
@@ -57,12 +58,19 @@ public class Prueba3 extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 785, 542);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.PINK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel lblNewLabel = new JLabel("BUSCAMINAS");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(77, 11, 256, 34);
+		contentPane.add(lblNewLabel);
+		
 		JLabel labelImagenGanar = new JLabel("");
-		labelImagenGanar.setBounds(10, 11, 752, 470);
+		labelImagenGanar.setBounds(410, 11, 373, 470);
 		contentPane.add(labelImagenGanar);
 		labelImagenGanar.setIcon(new ImageIcon("src/imagenes/win.jpg"));
 		labelImagenGanar.setVisible(false);
@@ -74,16 +82,10 @@ public class Prueba3 extends JFrame {
 		labelImagen.setIcon(new ImageIcon("src/imagenes/buscamina.jpg"));
 		labelImagen.setVisible(false);
 		
-		
-		JLabel lblNewLabel = new JLabel("Buscaminas");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(77, 11, 256, 34);
-		contentPane.add(lblNewLabel);
-		
-		System.out.println(mina1);
+		/*System.out.println(mina1);
 		System.out.println(mina2);
 		System.out.println(mina3);
-		System.out.println(mina4);
+		System.out.println(mina4);*/
 		
 		JButton boton1 = new JButton("");
 		boton1.addActionListener(new ActionListener() {
@@ -92,12 +94,14 @@ public class Prueba3 extends JFrame {
 				if((mina1 == 1) || (mina2 == 1) ||  (mina3 == 1) || (mina4 == 1)) {
 				
 					labelImagen.setVisible(true);
-				
+					Prueba3 prueba =new Prueba3();
+					prueba.setVisible(false);
+					prueba.dispose();
 				}else {
 					
 					boton1.setBackground(Color.GREEN);
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 				}
@@ -120,7 +124,7 @@ public class Prueba3 extends JFrame {
 					
 					boton2.setBackground(Color.GREEN);
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 				}
@@ -144,7 +148,7 @@ public class Prueba3 extends JFrame {
 					
 					boton6.setBackground(Color.GREEN);
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 				}
@@ -167,7 +171,7 @@ public class Prueba3 extends JFrame {
 					
 					boton5.setBackground(Color.GREEN);
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 				}
@@ -190,7 +194,7 @@ public class Prueba3 extends JFrame {
 					
 					boton4.setBackground(Color.GREEN);
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 				}
@@ -213,7 +217,7 @@ public class Prueba3 extends JFrame {
 					
 					boton9.setBackground(Color.GREEN);
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 				}
@@ -237,7 +241,7 @@ public class Prueba3 extends JFrame {
 					boton3.setBackground(Color.GREEN);
 					
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 					
@@ -262,7 +266,7 @@ public class Prueba3 extends JFrame {
 					boton10.setBackground(Color.GREEN);
 					
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 					
@@ -287,7 +291,7 @@ public class Prueba3 extends JFrame {
 					boton7.setBackground(Color.GREEN);
 					
 					contador++;
-					if(contador == 7) {
+					if(contador == 8) {
 						labelImagenGanar.setVisible(true);
 					}
 					
@@ -336,7 +340,10 @@ public class Prueba3 extends JFrame {
 				}else {
 					
 					boton11.setBackground(Color.GREEN);
-					
+					contador++;
+					if(contador == 8) {
+						labelImagenGanar.setVisible(true);
+					}
 				}
 				
 			}

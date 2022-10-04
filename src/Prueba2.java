@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class Prueba2 extends JFrame {
 
@@ -55,26 +56,32 @@ public class Prueba2 extends JFrame {
 		contentPane.add(imagen2);
 		imagen2.setVisible(false);
 		
-		JLabel lblImagenDealer = new JLabel("");
-		lblImagenDealer.setBounds(10, 0, 794, 374);
-		lblImagenDealer.setIcon(new ImageIcon("src/imagenes/dealer.jpg"));
-		contentPane.add(lblImagenDealer);
+		
 		
 		JLabel lblCartasJug = new JLabel("CARTAS DEL JUGADOR");
+		lblCartasJug.setForeground(Color.WHITE);
 		lblCartasJug.setBounds(20, 389, 144, 13);
 		contentPane.add(lblCartasJug);
 		
 		JLabel lblNumJug = new JLabel("");
-		lblNumJug.setBounds(162, 389, 45, 13);
+		lblNumJug.setForeground(Color.WHITE);
+		lblNumJug.setBounds(174, 389, 45, 13);
 		contentPane.add(lblNumJug);
 		
 		JLabel lblCartasDealer = new JLabel("CARTAS DEALER");
+		lblCartasDealer.setForeground(Color.WHITE);
 		lblCartasDealer.setBounds(299, 389, 113, 13);
 		contentPane.add(lblCartasDealer);
 		
 		JLabel lblNumDealer = new JLabel("");
-		lblNumDealer.setBounds(463, 389, 45, 13);
+		lblNumDealer.setForeground(Color.WHITE);
+		lblNumDealer.setBounds(442, 389, 45, 13);
 		contentPane.add(lblNumDealer);
+		
+		JLabel lblImagenDealer = new JLabel("");
+		lblImagenDealer.setBounds(10, 0, 794, 432);
+		lblImagenDealer.setIcon(new ImageIcon("src/imagenes/dealer.jpg"));
+		contentPane.add(lblImagenDealer);
 		
 		JButton btnInicio = new JButton("INICIAR JUEGO");
 		btnInicio.addActionListener(new ActionListener() {
