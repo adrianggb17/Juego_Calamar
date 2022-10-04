@@ -78,11 +78,6 @@ public class Prueba2 extends JFrame {
 		lblNumDealer.setBounds(442, 389, 45, 13);
 		contentPane.add(lblNumDealer);
 		
-		JLabel lblImagenDealer = new JLabel("");
-		lblImagenDealer.setBounds(10, 0, 794, 432);
-		lblImagenDealer.setIcon(new ImageIcon("src/imagenes/dealer.jpg"));
-		contentPane.add(lblImagenDealer);
-		
 		JButton btnInicio = new JButton("INICIAR JUEGO");
 		btnInicio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -142,6 +137,11 @@ public class Prueba2 extends JFrame {
 		});
 		btnPedir.setBounds(498, 318, 128, 21);
 		contentPane.add(btnPedir);
+		
+		JLabel lblImagenDealer = new JLabel("");
+		lblImagenDealer.setBounds(10, 0, 794, 432);
+		lblImagenDealer.setIcon(new ImageIcon("src/imagenes/dealer.jpg"));
+		contentPane.add(lblImagenDealer);
 		
 		
 		
